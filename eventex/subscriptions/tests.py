@@ -74,7 +74,7 @@ class SubscribePostTest(TestCase):
         Test email subject
         """
         email = mail.outbox[0]
-        expect = 'Confirmação de Inscrição'
+        expect = 'Confirmacao de Inscricao'
         self.assertEqual(expect, email.subject)
 
     def test_subscription_email_from(self):
