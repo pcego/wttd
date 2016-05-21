@@ -1,6 +1,10 @@
 
 Sistema Eventos Curso WTTD
 
+[![Build Status](https://travis-ci.org/pcego/wttd.svg?branch=master)](https://travis-ci.org/pcego/wttd)
+
+[![Code Health](https://landscape.io/github/pcego/wttd/master/landscape.svg?style=flat)](https://landscape.io/github/pcego/wttd/master)
+
 ## Como Desenvolver
 
 1. Clone o Repositório
