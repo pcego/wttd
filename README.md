@@ -19,7 +19,7 @@ git clone https://github.com/pcego/wttd.git wttd2
 cd wttd2
 python -m venv .wttd2
 source .wttd2/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 cp contrib/env-sample .env
 python manage.py test
 ```
