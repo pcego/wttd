@@ -1,3 +1,5 @@
+gunicorn==19.4.1
+psycopg2==2.6.1
 backports.shutil-get-terminal-size==1.0.0
 decorator==4.0.9
 dj-database-url==0.4.1
@@ -32,3 +34,4 @@ tornado==4.3
 traitlets==4.2.1
 widgetsnbextension==1.2.2
 django-test-without-migrations==0.4
+
