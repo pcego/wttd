@@ -33,3 +33,5 @@ terminado==0.6
 tornado==4.3
 traitlets==4.2.1
 widgetsnbextension==1.2.2
+gunicorn==19.4.1
+psycopg2==2.6.1
