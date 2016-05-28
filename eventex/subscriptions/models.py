@@ -9,8 +9,8 @@ class Subscription(models.Model):
     created_at = models.DateTimeField('Criado Em', auto_now_add=True)
 
     class Meta:
-        verbose_name_plural = 'inscrições'
-        verbose_name = 'inscrição'
+        verbose_name_plural = 'inscricoes'
+        verbose_name = 'inscricao'
         ordering = ('-created_at',)
 
     def __str__(self):
