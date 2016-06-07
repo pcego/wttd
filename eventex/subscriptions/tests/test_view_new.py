@@ -2,14 +2,15 @@ import unittest
 
 from django.core import mail
 from django.test import TestCase
+from django.shortcuts import resolve_url as r
 from eventex.subscriptions.forms import SubscriptionForm
 from eventex.subscriptions.models import Subscription
 
 
-class SubscribeGet(TestCase):
+class SubscriptionsNewGet(TestCase):
 
     def setUp(self):
-        self.response = self.client.get('/inscricao/')
+        self.response = self.client.get(r('subscriptions:new'))
 
 
     def test_get(self):
@@ -52,18 +53,18 @@ class SubscribeGet(TestCase):
         form = self.response.context['form']
         self.assertIsInstance(form, SubscriptionForm)
 
-class SubscribePostValid(TestCase):
+class SubscriptionsNewPostValid(TestCase):
 
     def setUp(self):
         data = dict(name='Paulo César', cpf='12345678901',email='pcego36@gmail.com', phone='38-32122980')
-        self.response = self.client.post('/inscricao/', data)
+        self.response = self.client.post(r('subscriptions:new'), data)
 
     def test_post(self):
         """
         Valid POST should redirect to /inscricao/1/
         """
         #self.assertEqual(302, self.response.status_code)
-        self.assertRedirects(self.response, '/inscricao/1/')
+        self.assertRedirects(self.response, r('subscriptions:detail', 1))
 
     def test_send_subscribe_email(self):
         """
@@ -77,10 +78,10 @@ class SubscribePostValid(TestCase):
         """
         self.assertTrue(Subscription.objects.exists())
 
-class SubscribePostInvalid(TestCase):
+class SubscriptionsNewPostInvalid(TestCase):
 
     def setUp(self):
-        self.response = self.client.post('/inscricao/', {})
+        self.response = self.client.post(r('subscriptions:new'), {})
 
     def test_post(self):
 
@@ -121,5 +122,5 @@ class SubscribeSucessMessage(TestCase):
     def test_message(self):
         data = dict(name='Paulo César', cpf='12345678901',
                     email='pcego36@gmail.com', phone='38-3212-2980')
-        response = self.client.post('/inscricao/', data, follow=True)
+        response = self.client.post(r('subscriptions:new'), data, follow=True)
         self.assertContains(response, 'Inscricao Realizada com Sucesso!')
