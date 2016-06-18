@@ -7,7 +7,7 @@ class SubscribePostValid(TestCase):
 
 
     def setUp(self):
-        data = dict(name='Paulo César', cpf='12345678901',email='pcego36@gmail.com', phone='38-32122980')
+        data = dict(name='Paulo Cesar', cpf='12345678901',email='pcego36@gmail.com', phone='38-32122980')
         self.client.post(r('subscriptions:new'), data)
         self.email = mail.outbox[0]
 
@@ -40,7 +40,7 @@ class SubscribePostValid(TestCase):
         """
         Test email body
         """
-        contents = ['Paulo César',
+        contents = ['Paulo Cesar',
                     '12345678901',
                     'pcego36@gmail.com',
                     '38-32122980']
