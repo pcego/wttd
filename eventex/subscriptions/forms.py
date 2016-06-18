@@ -12,8 +12,8 @@ def validate_cpf(value):
 class SubscriptionForm(forms.Form):
     name = forms.CharField(label= 'Nome')
     cpf = forms.CharField(label='CPF', validators=[validate_cpf])
-    email = forms.EmailField(label='Email')
-    phone = forms.CharField(label='Telefone')
+    email = forms.EmailField(label='Email', required=False)
+    phone = forms.CharField(label='Telefone', required=False)
 
 
     def clean_name(self):
@@ -22,3 +22,14 @@ class SubscriptionForm(forms.Form):
         words=[w.capitalize() for w in name.split()]
 
         return ' '.join(words)
+
+
+    def clean(self):
+
+        if not self.cleaned_data.get('email') and not self.cleaned_data.get('phone'):
+
+            raise ValidationError('Informe seu Email ou Telefone')
+
+        return self.cleaned_data
+
+
