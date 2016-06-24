@@ -30,7 +30,7 @@ def create(request):
 
         return render(request, 'subscriptions/subscription_form.html',
                       {'form':form})
-    
+
     subscription = form.save()
     #subscription = Subscription.objects.create(**form.cleaned_data)
 

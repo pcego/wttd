@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 from eventex.subscriptions.models import Subscription
 from eventex.subscriptions.validators import validate_cpf
 
-
+"""
 class SubscriptionFormOld(forms.Form):
     name = forms.CharField(label= 'Nome')
     cpf = forms.CharField(label='CPF', validators=[validate_cpf])
@@ -26,6 +26,9 @@ class SubscriptionFormOld(forms.Form):
             raise ValidationError('Informe seu Email ou Telefone')
 
         return self.cleaned_data
+
+"""
+
 
 class SubscriptionForm(forms.ModelForm):
 
