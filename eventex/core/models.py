@@ -7,7 +7,7 @@ class Speaker(models.Model):
     slug = models.SlugField('slug')
     website = models.URLField('website', blank=True)
     photo = models.URLField('foto')
-    description = models.TextField('descrição', blank=True)
+    description = models.TextField('descricao', blank=True)
 
 
     class Meta:
