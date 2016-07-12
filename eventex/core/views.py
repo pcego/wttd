@@ -1,6 +1,5 @@
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from eventex.core.models import Speaker, Talk, Course
+from eventex.core.models import Speaker, Talk
 
 
 def home(request):

@@ -50,6 +50,7 @@ class TalkModelAdmin(admin.ModelAdmin):
         qs = super().get_queryset(request)
 
         return qs.filter(course=None)
+    
 
 admin.site.register(Speaker, SpeakerModelAdmin)
 admin.site.register(Talk, TalkModelAdmin)
