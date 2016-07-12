@@ -17,9 +17,9 @@ class TestListGet(TestCase):
                                  description = 'Descricao da palestra.')
 
         c1 = Course.objects.create(title='Titulo do Curso',
-                                   start= '09:00',
-                                   description = 'Descricao do curso.',
-                                   slots=20)
+                                      start= '09:00',
+                                      description = 'Descricao do curso.',
+                                      slots=20)
 
         speaker = Speaker.objects.create(name= 'Henrique Bastos',
                                          slug= 'henrique-bastos',
@@ -62,7 +62,7 @@ class TestListGet(TestCase):
 
     def test_context(self):
 
-        variables = ['morning_talks', 'afternoon_talks', 'courses']
+        variables = ['morning_talks', 'afternoon_talks']
 
         for key in variables:
             with self.subTest():
