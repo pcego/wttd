@@ -47,7 +47,7 @@ class TalkModelAdmin(admin.ModelAdmin):
 
     def get_queryset(self, request):
 
-        qs = super().get_queryset(self, request)
+        qs = super(self).get_queryset(request)
 
         return qs.filter(course=None)
 
