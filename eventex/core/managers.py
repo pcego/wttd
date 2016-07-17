@@ -25,7 +25,7 @@ class KindContactManager(models.Manager):
         return self.get_queryset().phones()
 
 
-class PeriodManager(models.Manager):
+class PeriodQuerySet(models.QuerySet):
 
     MIDDAY = '12:00'
 
@@ -37,5 +37,4 @@ class PeriodManager(models.Manager):
         return self.filter(start__gte=self.MIDDAY)
 
 
-
-# minuto 22:43
+PeriodManager = models.Manager.from_queryset(PeriodQuerySet)
