@@ -48,7 +48,7 @@ class SubscriptionForm(forms.ModelForm):
 
     def clean(self):
 
-        self.cleaned_data = super().clean()
+        self.cleaned_data = super(SubscriptionForm, self).clean()
 
         if not self.cleaned_data.get('email') and not self.cleaned_data.get('phone'):
 
