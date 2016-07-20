@@ -33,8 +33,8 @@ class SubscriptionFormTest(TestCase):
         """
         Name must be Capitalized
         """
-        form = self.make_validated_form(name='PAULO cesar')
-        self.assertEqual('Paulo Cesar', form.cleaned_data['name'])
+        form = self.make_validated_form(name='PAULO césar')
+        self.assertEqual('Paulo César', form.cleaned_data['name'])
 
 
     def test_email_is_optional(self):

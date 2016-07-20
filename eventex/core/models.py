@@ -9,7 +9,7 @@ class Speaker(models.Model):
     slug = models.SlugField('slug')
     website = models.URLField('website', blank=True)
     photo = models.URLField('foto')
-    description = models.TextField('descricao', blank=True)
+    description = models.TextField('descrição', blank=True)
 
 
     class Meta:
@@ -51,9 +51,9 @@ class Contact(models.Model):
 
 class Talk(models.Model):
 
-    title = models.CharField('titulo', max_length=200)
-    start = models.TimeField('inicio', blank=True, null=True)
-    description = models.TextField('descricao', blank=True)
+    title = models.CharField('título', max_length=200)
+    start = models.TimeField('início', blank=True, null=True)
+    description = models.TextField('descrição', blank=True)
     speakers = models.ManyToManyField('Speaker', verbose_name='palestrantes', blank=True)
 
     objects = PeriodManager()

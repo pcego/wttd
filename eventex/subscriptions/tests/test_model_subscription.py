@@ -8,7 +8,7 @@ class SubscriptionModelTest(TestCase):
     def setUp(self):
 
         self.obj = Subscription(
-                name='Paulo Cesar',
+                name='Paulo César',
                 cpf='12345678901',
                 email='pcego36@gmail.com',
                 phone='38-3212-2980',
@@ -27,7 +27,7 @@ class SubscriptionModelTest(TestCase):
         self.assertIsInstance(self.obj.created_at, datetime)
 
     def test_str(self):
-        self.assertEqual('Paulo Cesar', str(self.obj))
+        self.assertEqual('Paulo César', str(self.obj))
 
 
     def test_paid_default_to_false(self):

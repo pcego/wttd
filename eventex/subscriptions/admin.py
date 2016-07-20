@@ -21,10 +21,10 @@ class SubscriptionModelAdmin(admin.ModelAdmin):
         count = queryset.update(paid=True)
 
         if count == 1:
-            msg = '{} Inscricao Marcada como Paga'
+            msg = '{} Inscrição Marcada como Paga'
 
         else:
-            msg = '{} Inscricoes Marcadas como Pagas'
+            msg = '{} Inscrições Marcadas como Pagas'
 
         self.message_user(request, msg.format(count))
 

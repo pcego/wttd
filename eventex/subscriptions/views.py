@@ -17,7 +17,7 @@ class EmailCreateView(EmailCreateMixin, CreateView):
 
 new = EmailCreateView.as_view(model = Subscription,
                               form_class = SubscriptionForm,
-                              email_subject = 'Confirmacao de Inscricao')
+                              email_subject = 'Confirmação de Inscrição')
 
 
 detail = DetailView.as_view(model=Subscription)

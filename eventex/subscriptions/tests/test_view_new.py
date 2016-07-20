@@ -119,7 +119,7 @@ class TemplateRegressionTest(TestCase):
 
     def test_template_has_non_field_errors(self):
 
-        invalid_data = dict(name='Paulo Cesar',
+        invalid_data = dict(name='Paulo César',
                             cpf='12345678901')
         response = self.client.post(r('subscriptions:new'), invalid_data)
 
@@ -135,4 +135,4 @@ class SubscribeSucessMessage(TestCase):
         data = dict(name='Paulo César', cpf='12345678901',
                     email='pcego36@gmail.com', phone='38-3212-2980')
         response = self.client.post(r('subscriptions:new'), data, follow=True)
-        self.assertContains(response, 'Inscricao Realizada com Sucesso!')
+        self.assertContains(response, 'Inscrição Realizada com Sucesso!')

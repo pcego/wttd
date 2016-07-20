@@ -37,7 +37,7 @@ class SubscriptionModelAdminTest(TestCase):
         """It should send a message to user"""
 
         mock = self.call_action()
-        mock.assert_called_once_with(None, '1 Inscricao Marcada como Paga')
+        mock.assert_called_once_with(None, '1 Inscrição Marcada como Paga')
 
 
     def call_action(self):
